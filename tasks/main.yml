@@ -1,0 +1,24 @@
+---
+- name: download...
+  become: yes
+  become_user: root
+  get_url:
+    url: '{{oc_tgz_url}}'
+    dest: /tmp/{{oc_tgz}}
+    mode: 0644
+
+- name: unarchive
+  become: yes
+  become_user: root
+  unarchive:
+    src: /tmp/{{oc_tgz}}
+    dest: '{{oc_install_parent_dir}}'
+    creates: '{{oc_install_dir}}'
+
+- name: link
+  become: yes
+  become_user: root
+  file:
+    src: '{{oc_install_dir}}/oc'
+    dest: '{{oc_install_parent_dir}}/oc'
+    state: link
