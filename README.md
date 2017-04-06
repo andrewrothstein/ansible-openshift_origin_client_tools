@@ -2,7 +2,7 @@
 andrewrothstein.openshift-origin-client-tools
 =========
 
-Installs [OpenShift Origin Client Tools](https://github.com/openshift/origin)
+Installs [OpenShift Origin Client Tools](https://github.com/openshift/origin) include the oc CLI.
 
 Requirements
 ------------
