@@ -1,10 +1,12 @@
 ---
 # vars file for openshift-origin-client-tools
-oc_name: 'openshift-origin-client-tools-{{oc_ver}}-{{oc_sha}}-{{oc_platform}}'
-oc_tgz: '{{oc_name}}.tar.gz'
+oc_name_minus: 'openshift-origin-client-tools-{{oc_ver}}-{{oc_sha}}-{{oc_platform}}'
+oc_name_plus: 'openshift-origin-client-tools-{{oc_ver}}+{{oc_sha}}-{{oc_platform}}'
+oc_tgz: '{{oc_name_minus}}.tar.gz'
 
 # https://github.com/openshift/origin/releases/download/v1.4.1/openshift-origin-client-tools-v1.4.1-3f9807a-linux-64bit.tar.gz
 oc_tgz_url: '{{oc_mirror}}/{{oc_ver}}/{{oc_tgz}}'
 oc_checksum: '{{oc_checksums[oc_platform]}}'
 
-oc_install_dir: '{{oc_install_parent_dir}}/{{oc_name}}'
+# /usr/local/bin/openshift-origin-client-tools-v1.4.1+3f9807a-linux-64bit
+oc_install_dir: '{{oc_install_parent_dir}}/{{oc_name_plus}}'
