@@ -16,13 +16,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: Alpine
-      versions:
-        - all
   galaxy_tags:
     - development
 
 dependencies:
   - role: andrewrothstein.unarchive-deps
     version: v1.0.6
-  
