@@ -1,14 +1,14 @@
 ---
 # defaults file for openshift-origin-client-tools
-oc_ver: v1.4.1
-oc_sha: '3f9807a'
+oc_ver: v3.6.0-alpha.0
+oc_sha: '0343989'
 oc_mirror: https://github.com/openshift/origin/releases/download
 oc_platform: linux-64bit
 
 oc_checksums:
-  linux-32bit: sha256:51d57a891ec7f7ef8c5fca9eef99971a1caaa4e82892e1675f402724e1a9f6c6
-  linux-64bit: sha256:c2ac117e85a968c4d16d5657a31dce0715dcbfa4ab4a7bc49e5c6fd7caffb7da
-  mac: sha256:97668ef7d4312a1a7a45e447b735873766cb1d66342d3c3f6e9f7e613f89fae7
-  windows: sha256:922bc2318685c4ea3518e17099c17ad609529a744fc48231c226f4e1e76d3288
+  linux-32bit: sha256:71b854fdc5e80f97afa8e20c4f138eff3dc8c3acb4a8dae6c6bac14fa93270ef
+  linux-64bit: sha256:8b51c0c3db20101740590075a63540fefe7a4f797fdb832974c6f61bac8bd901
+  mac: sha256:f59ffa513316e050746afdc79b59ebffcdf6d95996b44269f64e2e6cad3f352c
+  windows: sha256:4c0f109a2229a5927d9333cc0bf523dc11c5848d51aa799f5934822193bbc690
 
 oc_install_parent_dir: /usr/local/bin
