@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-openshift-origin-client-tools.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-openshift-origin-client-tools)
 andrewrothstein.openshift-origin-client-tools
 =========
+[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-openshift-origin-client-tools.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-openshift-origin-client-tools)
 
 Installs [OpenShift Origin Client Tools](https://github.com/openshift/origin) include the oc CLI.
 
