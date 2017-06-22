@@ -8,6 +8,10 @@ oc_platform: linux-64bit
 oc_checksums:
   linux-64bit: sha256:7b16648ffa9016c97622d1142745eb2f528296af8c9c7068bcf1c2a1bdc1914c
   mac: sha256:a99e5f070d926ac996acf2db11f518463b661703b4712e5fca6a1f8d9504d2af
-  windows: sha256:b88c724fb6c54b12ffde296c736c2190a0459c52b6f6067552efccbe648f6694
+
+oc_download_format: tar.gz
 
 oc_install_parent_dir: /usr/local/bin
+oc_cleanup: False
+
+oc_privilege_escalation: True
