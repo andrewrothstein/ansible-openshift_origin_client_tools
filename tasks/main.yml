@@ -6,6 +6,7 @@
     url: '{{oc_tgz_url}}'
     dest: /tmp/{{oc_tgz}}
     mode: 0644
+    checksum: '{{oc_checksum}}'
 
 - name: unarchive
   become: yes
