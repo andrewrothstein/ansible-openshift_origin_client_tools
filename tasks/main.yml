@@ -18,14 +18,23 @@
     dest: /tmp/{{oc_filename}}
     mode: 0644
     checksum: '{{oc_checksum}}'
+    timeout: '{{oc_download_timeout}}'
+
+- name: create directory for unarchive if required...
+  become: '{{oc_privilege_escalation}}'
+  become_user: root
+  file:
+    path: '{{oc_unarchive_dir}}'
+    state: directory
+    mode: 0755
 
 - name: unarchive
   become: '{{oc_privilege_escalation}}'
   become_user: root
   unarchive:
     src: /tmp/{{oc_filename}}
-    dest: '{{oc_install_parent_dir}}'
-    creates: '{{oc_install_dir}}'
+    dest: '{{oc_unarchive_dir}}'
+    creates: '{{oc_install_dir}}/oc'
 
 - name: link
   become: '{{oc_privilege_escalation}}'
