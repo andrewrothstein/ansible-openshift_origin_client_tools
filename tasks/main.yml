@@ -32,6 +32,7 @@
   become: '{{oc_privilege_escalation}}'
   become_user: root
   unarchive:
+    remote_src: yes
     src: /tmp/{{oc_filename}}
     dest: '{{oc_unarchive_dir}}'
     creates: '{{oc_install_dir}}/oc'
