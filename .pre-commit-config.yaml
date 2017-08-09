@@ -1,5 +1,5 @@
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  sha: v0.8.0
+  sha: v0.9.1
   hooks:
     - id: trailing-whitespace
     - id: end-of-file-fixer
@@ -11,14 +11,12 @@
         - --allow-missing-credentials
     - id: check-added-large-files
     - id: detect-private-key
-
 - repo: https://github.com/willthames/ansible-lint.git
   sha: v3.4.13
   hooks:
     - id: ansible-lint
       files: \.(yaml|yml)$
-      args: [
-        "--exclude=roles",
-        "--exclude=basic/roles",
-        "--exclude=.travis.yml"
-      ]
+      args:
+        - --exclude=roles
+        - --exclude=basic/roles
+        - --exclude=.travis.yml

@@ -8,6 +8,8 @@ oc_filename: '{{oc_name_minus}}.{{oc_download_format}}'
 oc_download_url: '{{oc_mirror}}/{{oc_ver}}/{{oc_filename}}'
 oc_checksum: '{{oc_checksums[oc_platform]}}'
 
+oc_unarchive_dir: '{{oc_install_parent_dir}}'
+
 # /usr/local/bin/openshift-origin-client-tools-v1.4.1+3f9807a-linux-64bit
 # /usr/local/bin/openshift-origin-client-tools-v3.6.0-alpha.0-0343989-linux-64bit/
 oc_install_dir: '{{oc_install_parent_dir}}/{{oc_name_minus}}'
