@@ -18,3 +18,6 @@ oc_privilege_escalation: True
 
 # Timeout in seconds for oc download request
 oc_download_timeout: 10
+
+# Whether the symlink should be forced or not. No for backwards compatibility.
+force_oc_link: no
