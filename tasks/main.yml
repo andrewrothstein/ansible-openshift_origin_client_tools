@@ -46,6 +46,7 @@
     src: '{{oc_install_dir}}/{{item}}'
     dest: '{{oc_install_parent_dir}}/{{item}}'
     state: link
+    force: '{{force_oc_link}}'
 
 - name: cleanup
   become: yes
