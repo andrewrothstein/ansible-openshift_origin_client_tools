@@ -21,3 +21,6 @@ oc_download_timeout: 10
 
 # Whether the symlink should be forced or not. No for backwards compatibility.
 force_oc_link: no
+
+# Whether oc should be unarchived even if it already exists.
+force_oc_unarchive: no

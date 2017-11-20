@@ -35,7 +35,7 @@
     remote_src: yes
     src: /tmp/{{oc_filename}}
     dest: '{{oc_unarchive_dir}}'
-    creates: '{{oc_install_dir}}/oc'
+    creates: '{{ force_oc_unarchive | ternary(None, oc_install_dir+"/oc") }}'
 
 - name: link
   become: '{{oc_privilege_escalation}}'
