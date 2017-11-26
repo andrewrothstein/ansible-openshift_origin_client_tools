@@ -10,32 +10,49 @@
       paths:
         - '{{role_path}}/vars'
 
-- name: download...
+- name: check for install
   become: '{{oc_privilege_escalation}}'
   become_user: root
-  get_url:
-    url: '{{oc_download_url}}'
-    dest: /tmp/{{oc_filename}}
-    mode: 0644
-    checksum: '{{oc_checksum}}'
-    timeout: '{{oc_download_timeout}}'
+  stat:
+    path: '{{oc_unarchive_dir}}/oc'
+  changed_when: false
+  register: oc_binary_present
 
-- name: create directory for unarchive if required...
-  become: '{{oc_privilege_escalation}}'
-  become_user: root
-  file:
-    path: '{{oc_unarchive_dir}}'
-    state: directory
-    mode: 0755
+- when: not oc_binary_present.stat.exists
+  block:
+    - name: download...
+      become: '{{oc_privilege_escalation}}'
+      become_user: root
+      get_url:
+        url: '{{oc_download_url}}'
+        dest: /tmp/{{oc_filename}}
+        mode: 0644
+        checksum: '{{oc_checksum}}'
+        timeout: '{{oc_download_timeout}}'
 
-- name: unarchive
-  become: '{{oc_privilege_escalation}}'
-  become_user: root
-  unarchive:
-    remote_src: yes
-    src: /tmp/{{oc_filename}}
-    dest: '{{oc_unarchive_dir}}'
-    creates: '{{oc_install_dir}}/oc'
+    - name: create directory for unarchive if required...
+      become: '{{oc_privilege_escalation}}'
+      become_user: root
+      file:
+        path: '{{oc_unarchive_dir}}'
+        state: directory
+        mode: 0755
+
+    - name: unarchive
+      become: '{{oc_privilege_escalation}}'
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{oc_filename}}
+        dest: '{{oc_unarchive_dir}}'
+        creates: '{{oc_install_dir}}/oc'
+  always:
+    - name: cleanup
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{oc_filename}}
+        state: absent
 
 - name: link
   become: '{{oc_privilege_escalation}}'
@@ -47,11 +64,3 @@
     dest: '{{oc_install_parent_dir}}/{{item}}'
     state: link
     force: '{{force_oc_link}}'
-
-- name: cleanup
-  become: yes
-  become_user: root
-  when: oc_cleanup
-  file:
-    path: /tmp/{{oc_filename}}
-    state: absent
