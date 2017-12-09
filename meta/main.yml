@@ -16,6 +16,7 @@ galaxy_info:
     - name: Debian
       versions:
         - jessie
+        - stretch
     - name: Ubuntu
       versions:
         - all
@@ -23,6 +24,9 @@ galaxy_info:
       versions:
         - all
     - name: Darwin
+      versions:
+        - all
+    - name: ArchLinux
       versions:
         - all
   galaxy_tags:
