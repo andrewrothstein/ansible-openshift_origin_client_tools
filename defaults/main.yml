@@ -15,6 +15,10 @@ oc_checksums:
     '7ed6862':
       linux-64bit: sha256:573e39965633671aac08d68f57d66ff182fb646649523914f0a60debb6515eba
       mac: sha256:7b00cf3535e9b5a33c30a143bdb5621fe49f73aee63c77ff4a7f8d0212be4f0a
+  v3.7.1:
+    'ab0f056':
+      linux-64bit: sha256:56e9dbff7e5e4ade1e92cc10ff1bd1ae2789ec400be0d8a5b2177fd6c465af21
+      mac: sha256:e2cdad103485580166e4aef14e111551439c2c18a1ed77376b16808755b363ea
 
 oc_install_parent_dir: /usr/local/bin
 
