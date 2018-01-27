@@ -3,8 +3,8 @@
 oc_mirror: https://github.com/openshift/origin/releases/download
 oc_platform: linux-64bit
 
-oc_ver: v3.7.0
-oc_sha: '7ed6862'
+oc_ver: v3.7.1
+oc_sha: 'ab0f056'
 
 oc_checksums:
   v3.6.1:
