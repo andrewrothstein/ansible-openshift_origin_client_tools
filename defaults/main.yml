@@ -3,8 +3,8 @@
 oc_mirror: https://github.com/openshift/origin/releases/download
 oc_platform: linux-64bit
 
-oc_ver: v3.7.1
-oc_sha: 'ab0f056'
+oc_ver: v3.7.2
+oc_sha: '282e43f'
 
 oc_checksums:
   v3.6.1:
@@ -19,6 +19,10 @@ oc_checksums:
     'ab0f056':
       linux-64bit: sha256:56e9dbff7e5e4ade1e92cc10ff1bd1ae2789ec400be0d8a5b2177fd6c465af21
       mac: sha256:e2cdad103485580166e4aef14e111551439c2c18a1ed77376b16808755b363ea
+  v3.7.2:
+    '282e43f':
+      linux-64bit: sha256:abc89f025524eb205e433622e59843b09d2304cc913534c4ed8af627da238624
+      mac: sha256:8ae2f51cdde5c76a33add98c64efc30f11f5c0fbd1dacc5ae5d0f147b96f7d18
 
 oc_install_parent_dir: /usr/local/bin
 
