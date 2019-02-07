@@ -30,7 +30,8 @@ galaxy_info:
       versions:
         - all
   galaxy_tags:
-    - openshift-origin-client
+    - openshift
+    - origin
 
 dependencies:
   - role: andrewrothstein.unarchive-deps
