@@ -1,5 +1,6 @@
 ---
 oc_platform: mac
+oc_archive_type: zip
+
 oc_privilege_escalation: False
-oc_download_format: zip
-oc_unarchive_dir: '{{oc_install_dir}}'
+oc_unarchive_dir: '{{ oc_install_dir }}'

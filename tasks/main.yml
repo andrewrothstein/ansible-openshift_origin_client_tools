@@ -24,7 +24,7 @@
       become: '{{ oc_privilege_escalation }}'
       become_user: root
       get_url:
-        url: '{{ oc_download_url }}'
+        url: '{{ oc_url }}'
         dest: /tmp/{{ oc_filename }}
         mode: 0644
         checksum: '{{ oc_checksum }}'
@@ -61,6 +61,5 @@
     - oc
   file:
     src: '{{ oc_install_dir }}/{{ item }}'
-    dest: '{{ oc_install_parent_dir }}/{{ item }}'
+    dest: '{{ oc_parent_install_dir }}/bin/{{ item }}'
     state: link
-    force: '{{ force_oc_link }}'
