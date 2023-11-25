@@ -4,7 +4,7 @@ oc_platform: linux-64bit
 oc_archive_type: tar.gz
 
 oc_parent_install_dir: /usr/local
-oc_privilege_escalation: True
+oc_privilege_escalation: true
 
 # Timeout in seconds for oc download request
 oc_download_timeout: 600

@@ -1,0 +1,5 @@
+---
+- role: andrewrothstein.unarchivedeps
+  version: 3.0.0
+- role: andrewrothstein.alpineglibcshim
+  version: v3.0.0

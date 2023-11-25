@@ -3,10 +3,11 @@
 oc_ver_str: v{{ oc_ver.major }}.{{ oc_ver.minor }}.{{ oc_ver.patch }}
 oc_name: 'openshift-origin-client-tools-{{ oc_ver_str }}-{{ oc_ver.sha_infix }}-{{ oc_platform }}'
 oc_filename: '{{ oc_name }}.{{ oc_archive_type | default("tar.gz") }}'
+oc_tmp_filename: '{{ oc_tmp_dir | default("/tmp") }}/{{ oc_filename }}'
 
 # https://artifacts-openshift-release-4-1.svc.ci.openshift.org/zips/openshift-origin-client-tools-v4.1.0-3040211-315-linux-64bit.tar.gz
 oc_url: https://artifacts-openshift-release-{{ oc_ver.major }}-{{ oc_ver.minor }}.svc.ci.openshift.org/zips/{{ oc_filename }}
 oc_checksum: '{{ oc_checksums[oc_ver_str][oc_ver.sha_infix][oc_platform] }}'
 
 oc_install_dir: '{{ oc_parent_install_dir }}/{{ oc_name }}'
-oc_unarchive_dir: '{{ oc_parent_install_dir }}'
+oc_install_exe: '{{ oc_install_dir }}/oc }}'

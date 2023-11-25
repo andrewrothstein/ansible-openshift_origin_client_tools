@@ -1,4 +1,9 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchivedeps
+- include_Role:
+    name: andrwerothstein.alpineglibc
+
 - name: resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
@@ -10,11 +15,11 @@
       paths:
         - '{{ role_path }}/vars'
 
-- name: check for install
+- name: check for {{ oc_install_exe }}
   become: '{{ oc_privilege_escalation }}'
   become_user: root
   stat:
-    path: '{{ oc_unarchive_dir }}/oc'
+    path: '{{ oc_install_exe }}'
   changed_when: false
   register: oc_binary_present
 
@@ -25,7 +30,7 @@
       become_user: root
       get_url:
         url: '{{ oc_url }}'
-        dest: /tmp/{{ oc_filename }}
+        dest: '{{ oc_tmp_filename }}'
         mode: 0644
         checksum: '{{ oc_checksum }}'
         timeout: '{{ oc_download_timeout }}'
@@ -38,20 +43,20 @@
         state: directory
         mode: 0755
 
-    - name: unarchive
+    - name: unarchive {{ oc_tmp_filename }} into {{ oc_unarchive_dir }}
       become: '{{ oc_privilege_escalation }}'
       become_user: root
       unarchive:
-        remote_src: yes
-        src: /tmp/{{ oc_filename }}
+        remote_src: true
+        src: '{{ oc_tmp_filename }}'
         dest: '{{ oc_unarchive_dir }}'
         creates: '{{ oc_install_dir }}/oc'
   always:
     - name: cleanup
-      become: yes
+      become: true
       become_user: root
       file:
-        path: /tmp/{{ oc_filename }}
+        path: '{{ oc_tmp_filename }}'
         state: absent
 
 - name: link

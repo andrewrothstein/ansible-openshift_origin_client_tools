@@ -1,38 +1,34 @@
-dependencies:
-- role: andrewrothstein.unarchive-deps
-  version: v1.1.2
-- role: andrewrothstein.alpine-glibc-shim
-  version: v2.0.11
+---
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
   description: installs oc
   galaxy_tags:
-  - openshift
-  - origin
-  license:
-  - MIT
+    - openshift
+    - origin
+  license: MIT
   min_ansible_version: 2.0
   platforms:
-  - name: EL
-    versions:
-    - all
-  - name: Fedora
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - jessie
-    - stretch
-  - name: Ubuntu
-    versions:
-    - all
-  - name: Alpine
-    versions:
-    - all
-  - name: Darwin
-    versions:
-    - all
-  - name: ArchLinux
-    versions:
-    - all
+    - name: Alpine
+      versions:
+        - all
+    - name: ArchLinux
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - bookworm
+        - bullseye
+    - name: EL
+      versions:
+        - 8
+        - 9
+    - name: Fedora
+      versions:
+        - 37
+        - 38
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+  role_name: openshift_origin_client_tools

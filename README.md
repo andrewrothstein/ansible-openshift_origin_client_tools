@@ -1,6 +1,6 @@
 andrewrothstein.openshift-origin-client-tools
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-openshift-origin-client-tools.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-openshift-origin-client-tools)
+![Build Status](https://github.com/andrewrothstein/ansible-openshift_origin_client_tools/actions/workflows/build.yml/badge.svg)
 
 Installs [OpenShift Origin Client Tools](https://github.com/openshift/origin) include the oc CLI.
 
